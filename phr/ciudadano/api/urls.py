@@ -1,0 +1,80 @@
+from django.conf.urls import include, url
+
+from phr.ciudadano.api import views
+
+app_name = 'ciudadano'
+urlpatterns = [
+    url(r'^v1/', include([
+
+        url(r'^ciudadano/', include([
+            url(r'^actualizar/(?P<tipo_documento>\d+)/(?P<numero_documento>\d+)/$',
+                views.CiudadanoDataAPIView.as_view(), name='actualizar_data'),
+            url(r'^actualizar/(?P<uuid>\b[0-9A-Fa-f]{8}\b(-\b[0-9A-Fa-f]{4}\b){3}-\b[0-9A-Fa-f]{12}\b)/$',
+                views.CiudadanoDataAPIView.as_view(), name='actualizar_data_uuid'),
+            url(r'^actualizar/padron/$', views.ActualizarPadron.as_view(), name='actualizar_padron'),
+            url(r'^antecedente/$', views.CiudadanoAntecedenteCrearActualizarAPIView.as_view(),
+                name='antecedente-crear'),
+            url(r'^antecedente/(?P<tipo_doc>\d{1,2})/(?P<nro_doc>\d{8,12})/$',
+                views.CiudadanoAntecedenteListarAPIView.as_view(), name='antecedente-listar'),
+            url(r'^antecedente/eliminar/(?P<antecedente_uuid>[\w-]+)/$',
+                views.CiudadanoAntecedenteEliminarAPIView.as_view(), name='antecedente-eliminar'),
+            url(r'^antecedente/(?P<ciudadano_uuid>[\w-]+)/reaccionesadversas/$',
+                views.CiudadanoAntecedenteReaccionAdversaMedicamentoListarAPIVew.as_view(),
+                name='antecedente-reaccionesadversas-listar'),
+            url(r'^antecedente/(?P<ciudadano_uuid>[\w-]+)/reaccionesadversas/(?P<pk>[\w-]+)/quitar/$',
+                views.CiudadanoAntecedenteReaccionAdversaMedicamentoQuitarAPIVew.as_view(),
+                name='antecedente-reaccionesadversas-quitar'),
+            url(r'^antecedente/(?P<ciudadano_uuid>[\w-]+)/reaccionesadversas/crearactualizar/$',
+                views.CiudadanoAntecedenteReaccionAdversaMedicamentoCrearActualizarAPIVew.as_view(),
+                name='antecedente-reaccionesadversas-crear-actualizar'),
+            url(r'^antecedentefam/$', views.CiudadanoAntecedenteFamCrearActualizarAPIView.as_view(),
+                name='antecedentefam-crear'),
+            url(r'^antecedentefam/(?P<tipo_doc>\d{1,2})/(?P<nro_doc>\d{8,12})/$',
+                views.CiudadanoAntecedenteFamListarAPIView.as_view(), name='antecedentefam-listar'),
+            url(r'^antecedentefam/eliminar/(?P<antecedente_uuid>[\w-]+)/$',
+                views.CiudadanoAntecedenteFamiliarEliminarAPIView.as_view(), name='antecedentefam-eliminar'),
+            url(r'^antecedentemedicacion/(?P<tipo_doc>\d{1,2})/(?P<nro_doc>\d{8,12})/$',
+                views.CiudadanoAntecedenteMedicacionListarAPIView.as_view(), name='antecedentemedicacion-listar'),
+            url(r'^antecedentemedicacion/$',
+                views.CiudadanoAntecedenteMedicacionCrearAPIView.as_view(), name='antecedentemedicacion-crear'),
+            url(r'^antecedentemedicacion/eliminar/(?P<pk>[\w-]+)/$',
+                views.CiudadanoAntecedenteMedicacionEliminarAPIView.as_view(), name='antecedentemedicacion-eliminar'),
+            url(r'^buscar/$', views.CiudadanoBuscarDataAPIView.as_view(), name='buscar_data'),
+            url(r'^buscardni/(?P<nro_doc>\d{8})/$', views.CiudadanoBuscarDNIAPIView.as_view(), name='buscar_dni'),
+            url(r'^crear/$', views.CiudadanoCrearDataAPIView.as_view(), name='crear_data'),
+            url(r'^madre/(?P<dni_madre>\d{8})/hijos/$', views.CiudadanoMadreHijos.as_view(), name='madre_hijos'),
+            url(r'^ver/(?P<numero_documento>\d+)/nombres/$', views.CiudadanoVerNombresAPIView.as_view(),
+                name='nombres'),
+            url(r'^ver/(?P<tipo_documento>\d+)/(?P<numero_documento>[\w-]+)/$', views.CiudadanoDataAPIView.as_view(),
+                name='ver'),
+            url(r'^ver/(?P<uuid>\b[0-9A-Fa-f]{8}\b(-\b[0-9A-Fa-f]{4}\b){3}-\b[0-9A-Fa-f]{12}\b)/$',
+                views.CiudadanoDataAPIView.as_view(), name='ver-uuid'),
+            url(r'^datos-sis/(?P<uuid>[\w-]+)/$', views.CiudadanoDatosSISAPIView.as_view(), name='datos-sis'),
+            url(r'^datos-sis/(?P<tipo_documento>\d+)/(?P<numero_documento>[\w-]+)/$',
+                views.CiudadanoDatosSISAPIView.as_view(), name='datos-sis'),
+            url(r'^validar-dni/$', views.ValidarNumeroDNI.as_view(), name='validar-dni'),
+            url(r'^fecha-actualizacion/(?P<uuid>[\w-]{36})/$', views.FechaActualizacionCiudadanoView.as_view(),
+                name='fecha-actualizacion-ciudadano'),
+        ], namespace='ciudadano')),
+
+        url(r'^ciudadanos/', include([
+            url(r'^$', views.CiudadanoListarCrearAPIView.as_view(), name='listar-crear'),
+            url(r'^buscar/$', views.CiudadanoBusquedaAPIView.as_view(), name='buscar'),
+            url(r'^editar/(?P<numero_documento>\d+)/$', views.CiudadanoEditarAPIView.as_view(), name='editar'),
+        ], namespace='ciudadanos')),
+
+        url(r'^cnv/', include([
+            url(r'^actualizar/control/(?P<cui>\w+)/$', views.ActualizarControlRN.as_view()),
+            url(r'^actualizar/egreso/(?P<cui>\w+)/$', views.ActualizarEgresoRN.as_view()),
+            url(r'^actualizar/ficha/(?P<cui>\w+)/$', views.ActualizarFichaRN.as_view()),
+            url(r'^actualizar/parto/(?P<cui>\w+)/$', views.ActualizarPartoRN.as_view()),
+            url(r'^buscar/$', views.BuscarCiudadanoRN.as_view()),
+            url(r'^crear/$', views.CrearCiudadanoRN.as_view()),
+            url(r'^madre/(?P<tipo_doc_madre>\w{1,2})/(?P<numero_doc_madre>\d{8,12})/$',
+                views.ListaCiudadanoRNMadre.as_view()),
+            url(r'^ver/(?P<cui>\w+)/$', views.VerCiudadanoRN.as_view()),
+            url(r'^establecimiento/(?P<codigo_renaes>[\w]+)/recien-nacidos/$', views.BuscarEESSRecienNacido.as_view(),
+                name='eess_recien_nacidos_api')
+        ], namespace='cnv')),
+    ], namespace='v1')),
+]

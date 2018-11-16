@@ -1,0 +1,6 @@
+-r base.txt
+flake8==3.0.4
+pep8-naming==0.4.1
+mixer==5.5.7
+ipython
+isort<4.4

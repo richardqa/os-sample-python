@@ -1,0 +1,146 @@
+[
+  {
+    "fields": {
+      "descripcion": "ESSALUD",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "2",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "descripcion": "GOBIERNO REGIONAL",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "7",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "descripcion": "INPE",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "13",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "descripcion": "MINSA",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "1",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "descripcion": "MUNICIPALIDAD DISTRITAL",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "9",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "descripcion": "MUNICIPALIDAD PROVINCIAL",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "8",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "descripcion": "OTRO",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "11",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "descripcion": "PRIVADO",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "10",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 10
+  },
+  {
+
+    "fields": {
+      "descripcion": "SANIDAD DE LA FUERZA AEREA DEL PERU",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "4",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "descripcion": "SANIDAD DE LA MARINA DE GUERRA DEL PERU",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "6",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "descripcion": "SANIDAD DE LA POLICIA NACIONAL DEL PERU",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "5",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "descripcion": "SANIDAD DEL EJERCITO DEL PERU",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "3",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": false
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 3
+  },
+   {
+    "fields": {
+      "descripcion": "IGSS",
+      "fecha_creacion": "2018-07-12T10:43:51.697",
+      "codigo": "14",
+      "fecha_modificacion": "2018-07-12T10:43:51.697",
+      "es_removido": true
+    },
+    "model": "establecimiento.establecimientosector",
+    "pk": 13
+  }
+]
